@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
 import Product from './pages/Product'
 import Pricing from './pages/Pricing'
 import PageNotFound from './pages/PageNotFound'
@@ -43,11 +43,9 @@ function App() {
 				<Route path="product" element={<Product />} />
 				<Route path="login" element={<Login />} />
 				<Route path="app" element={<AppLayout />}>
-					{/* Declare an index/default route */}
-					<Route
-						index
-						element={<CityList cities={cities} isLoading={isLoading} />}
-					/>
+					{/* Declare an index/default route - redirects by default using navigate hook*/}
+					<Route index element={<Navigate replace to="cities" />} />
+					{/* replace makes it a loose navigate meaning it will let you back off in the browser history */}
 					{/* Create nested routes */}
 					<Route
 						path="cities"
