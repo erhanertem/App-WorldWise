@@ -7,6 +7,7 @@
 ### **Objective:** Cretae WorldWise App
 
 - React Routing
+-
 
 &emsp;
 
@@ -21,14 +22,15 @@
 <details>
 <summary>Installed NPM packages and utilized APIs:</summary>
 
-| Package command                  | Package link | Description |
-| -------------------------------- | ------------ | ----------- |
-| npm create vite@latest           |              |             |
-| npm i react-router-dom           |              |             |
-| npm i json-server                |              |             |
-| npm i eslint -D                  |              |             |
-| npm i vite-plugin-eslint -D      |              |             |
-| npm i eslint-config-react-app -D |              |             |
+| Package command                  | Package link                  | Description |
+| -------------------------------- | ----------------------------- | ----------- |
+| npm create vite@latest           |                               |             |
+| npm i react-router-dom           |                               |             |
+| npm i json-server                |                               |             |
+| npm i eslint -D                  |                               |             |
+| npm i vite-plugin-eslint -D      |                               |             |
+| npm i eslint-config-react-app -D |                               |             |
+| npm i react-leaflet leaflet      | https://react-leaflet.js.org/ |             |
 
 </details>
 
