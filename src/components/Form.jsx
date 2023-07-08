@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 // "https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=0&longitude=0"
 
 import { useState } from 'react'
@@ -17,7 +16,6 @@ export function convertToEmoji(countryCode) {
 
 function Form() {
 	const [cityName, setCityName] = useState('')
-	const [country, setCountry] = useState('')
 	const [date, setDate] = useState(new Date())
 	const [notes, setNotes] = useState('')
 
