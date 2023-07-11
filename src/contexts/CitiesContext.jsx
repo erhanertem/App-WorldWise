@@ -1,10 +1,4 @@
-import {
-	createContext,
-	useState,
-	useEffect,
-	useContext,
-	useReducer,
-} from 'react'
+import { createContext, useEffect, useContext, useReducer } from 'react'
 
 const BASE_URL = 'http://localhost:9000'
 
@@ -50,7 +44,7 @@ function reducer(state, action) {
 function CitiesProvider({ children }) {
 	//--->USEREDUCER UNIFIED STATE MANAGEMENT DECLARATION
 	// const [state,dispatch] = useReducer(reducer, initialState)
-	const [{ cities, isLoading, currentCity }, dispatch] = useReducer(
+	const [{ cities, isLoading, currentCity, error }, dispatch] = useReducer(
 		reducer,
 		initialState,
 	)
@@ -83,6 +77,8 @@ function CitiesProvider({ children }) {
 	}, [])
 
 	async function getCity(id) {
+		// console.log(id, currentCity.id)
+		if (+id === currentCity.id) return //AVOIDING REDUNDANT RENDERING OF THE COMPONENTS IF ID CLICKED IS SAME AS THE CURRENTLY SHOWN - BEWARE ID IS KEPT STRING AND NEEDS TO BE CONVERTED TO NUMBER BEFORE CHECKING FOR EQUALITY.
 		try {
 			// setIsLoading(true)
 			dispatch({ type: 'loading' })
@@ -131,7 +127,7 @@ function CitiesProvider({ children }) {
 		try {
 			// setIsLoading(true)
 			dispatch({ type: 'loading' })
-			const response = await fetch(`${BASE_URL}/cities/${id}`, {
+			await fetch(`${BASE_URL}/cities/${id}`, {
 				method: 'DELETE',
 			})
 			// setCities(cities => cities.filter(city => city.id !== id)) //UPDATE STATE AFTER DELETION VIA FILTER OPERATION
@@ -157,6 +153,7 @@ function CitiesProvider({ children }) {
 				getCity,
 				createCity,
 				deleteCity,
+				error,
 			}}
 		>
 			{children}
