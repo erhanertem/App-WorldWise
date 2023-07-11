@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 import styles from './Map.module.css'
-import { useSearchParams, useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import {
 	MapContainer,
 	TileLayer,
@@ -13,21 +13,19 @@ import { useState, useEffect } from 'react'
 import { useCities } from '../contexts/CitiesContext'
 import { useGeolocation } from '../hooks/useGeoLocation'
 import Button from './Button'
-
 import flagEmojiToPNG from './flagEmojiToPNG'
+import { useUrlPosition } from '../hooks/useUrlPosition'
 
 function Map() {
 	const { cities } = useCities()
 	const [mapPosition, setMapPosition] = useState([40, 0])
-	const [searchParams, setSearchParams] = useSearchParams()
+	const [mapLat, mapLng] = useUrlPosition()
+
 	const {
 		isLoading: isLoadingPosition,
 		position: geoLocationPosition,
 		getPosition,
 	} = useGeolocation()
-
-	const mapLat = searchParams.get('lat')
-	const mapLng = searchParams.get('lng')
 
 	useEffect(
 		function () {
