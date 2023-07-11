@@ -1,16 +1,40 @@
 {
   "cities": [
     {
-      "cityName": "Lisbon",
-      "country": "Portugal",
-      "emoji": "🇵🇹",
-      "date": "2027-10-31T15:59:59.138Z",
-      "notes": "My favorite city so far!",
+      "cityName": "Pol",
+      "country": "Spain",
+      "emoji": "🇪🇸",
+      "date": "2023-07-11T16:55:16.454Z",
+      "notes": "cvcc",
       "position": {
-        "lat": 38.727881642324164,
-        "lng": -9.140900099907554
+        "lat": "43.08501201430305",
+        "lng": "-7.383324456011724"
       },
-      "id": 73930385
+      "id": 2
+    },
+    {
+      "cityName": "Chaabet El Ameur",
+      "country": "Algeria",
+      "emoji": "🇩🇿",
+      "date": "2023-07-11T16:55:25.246Z",
+      "notes": "xxxxx",
+      "position": {
+        "lat": "36.599753331427316",
+        "lng": "3.7019084206297452"
+      },
+      "id": 3
+    },
+    {
+      "cityName": "Ouadane",
+      "country": "Mauritania",
+      "emoji": "🇲🇷",
+      "date": "2023-07-11T16:55:36.178Z",
+      "notes": "xxxx",
+      "position": {
+        "lat": "23.686925208921675",
+        "lng": "-6.910956360954475"
+      },
+      "id": 4
     }
   ]
 }
