@@ -35,66 +35,6 @@
         "lng": 13.376933665713324
       },
       "id": 98443197
-    },
-    {
-      "cityName": "Castello de la Plana",
-      "country": "Spain",
-      "emoji": "🇪🇸",
-      "date": "2023-07-11T11:46:14.175Z",
-      "notes": "zzzzzzz😒😒😒😒",
-      "position": {
-        "lat": "40.03498716411441",
-        "lng": "0.0030797337133714473"
-      },
-      "id": 98443198
-    },
-    {
-      "cityName": "Castello de la Plana",
-      "country": "Spain",
-      "emoji": "🇪🇸",
-      "date": "2023-07-11T11:49:59.639Z",
-      "notes": "asa",
-      "position": {
-        "lat": "40.05063532901723",
-        "lng": "-0.01768629785201981"
-      },
-      "id": 98443199
-    },
-    {
-      "cityName": "Guercif",
-      "country": "Morocco",
-      "emoji": "🇲🇦",
-      "date": "2023-07-11T11:51:13.246Z",
-      "notes": "asa",
-      "position": {
-        "lat": "34.604474480142045",
-        "lng": "-3.0986680699769313"
-      },
-      "id": 98443200
-    },
-    {
-      "cityName": "Castello de la Plana",
-      "country": "Spain",
-      "emoji": "🇪🇸",
-      "date": "2023-07-11T11:58:26.982Z",
-      "notes": "",
-      "position": {
-        "lat": "40.02960084143284",
-        "lng": "-0.02214916788894517"
-      },
-      "id": 98443201
-    },
-    {
-      "cityName": "Sant Antoni de Portmany",
-      "country": "Spain",
-      "emoji": "🇪🇸",
-      "date": "2023-07-11T12:02:46.020Z",
-      "notes": "sss",
-      "position": {
-        "lat": "38.95500777967194",
-        "lng": "1.4157491074936337"
-      },
-      "id": 98443202
     }
   ]
 }

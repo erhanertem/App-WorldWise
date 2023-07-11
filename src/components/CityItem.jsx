@@ -27,8 +27,13 @@ const formatDate = date =>
 // }
 
 function CityItem({ city }) {
-	const { currentCity } = useCities()
+	const { currentCity, deleteCity } = useCities()
 	const { cityName, emoji, date, id, position } = city
+
+	function handleClick(event) {
+		event.preventDefault() // IMPORTANT! THIS PREVENTS ALSO CLICKING ONTO THE LINK WHILE CLICKING ONTO X BUTTON.
+		deleteCity(id)
+	}
 
 	return (
 		<li>
@@ -43,7 +48,9 @@ function CityItem({ city }) {
 				</span>
 				<h3 className={styles.name}>{cityName}</h3>
 				<time className={styles.date}>({formatDate(date)})</time>
-				<button className={styles.deleteBtn}>&times;</button>
+				<button className={styles.deleteBtn} onClick={id => handleClick(id)}>
+					&times;
+				</button>
 			</Link>
 		</li>
 	)
