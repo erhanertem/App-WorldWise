@@ -71,6 +71,30 @@
         "lng": "-3.0986680699769313"
       },
       "id": 98443200
+    },
+    {
+      "cityName": "Castello de la Plana",
+      "country": "Spain",
+      "emoji": "🇪🇸",
+      "date": "2023-07-11T11:58:26.982Z",
+      "notes": "",
+      "position": {
+        "lat": "40.02960084143284",
+        "lng": "-0.02214916788894517"
+      },
+      "id": 98443201
+    },
+    {
+      "cityName": "Sant Antoni de Portmany",
+      "country": "Spain",
+      "emoji": "🇪🇸",
+      "date": "2023-07-11T12:02:46.020Z",
+      "notes": "sss",
+      "position": {
+        "lat": "38.95500777967194",
+        "lng": "1.4157491074936337"
+      },
+      "id": 98443202
     }
   ]
 }
