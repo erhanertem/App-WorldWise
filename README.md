@@ -27,6 +27,7 @@
 | npm create vite@latest           |                               |             |
 | npm i react-router-dom           |                               |             |
 | npm i json-server                |                               |             |
+| npm i react-datepicker           |                               |             |
 | npm i eslint -D                  |                               |             |
 | npm i vite-plugin-eslint -D      |                               |             |
 | npm i eslint-config-react-app -D |                               |             |
