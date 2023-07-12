@@ -1,4 +1,4 @@
-import { createContext, useContext, useEffect, useReducer } from 'react'
+import { createContext, useContext, useReducer } from 'react'
 
 // Create Context API
 const AuthContext = createContext()
@@ -19,8 +19,9 @@ function reducer(state, action) {
 	}
 }
 
+// FAKE LOGIN DATA
 const FAKE_USER = {
-	name: 'Jack',
+	name: 'Jack Sparrow',
 	email: 'jack@example.com',
 	password: 'qwerty',
 	avatar: 'https://i.pravatar.cc/100?u=zz',
