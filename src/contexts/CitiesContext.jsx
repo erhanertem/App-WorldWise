@@ -1,4 +1,10 @@
-import { createContext, useEffect, useContext, useReducer } from 'react'
+import {
+	createContext,
+	useEffect,
+	useContext,
+	useReducer,
+	useCallback,
+} from 'react'
 
 const BASE_URL = 'http://localhost:9000'
 
@@ -76,27 +82,30 @@ function CitiesProvider({ children }) {
 		fetchCities()
 	}, [])
 
-	async function getCity(id) {
-		// console.log(id, currentCity.id)
-		if (+id === currentCity.id) return //AVOIDING REDUNDANT RENDERING OF THE COMPONENTS IF ID CLICKED IS SAME AS THE CURRENTLY SHOWN - BEWARE ID IS KEPT STRING AND NEEDS TO BE CONVERTED TO NUMBER BEFORE CHECKING FOR EQUALITY.
-		try {
-			// setIsLoading(true)
-			dispatch({ type: 'loading' })
-			const res = await fetch(`${BASE_URL}/cities/${id}`)
-			const data = await res.json()
-			// setCurrentCity(data)
-			dispatch({ type: 'city/loaded', payload: data })
-		} catch {
-			// alert('There was an error loading data...')
-			dispatch({
-				type: 'rejected',
-				payload: 'There was an error loading the city...',
-			})
-		}
-		// finally {
-		// 	setIsLoading(false)
-		// }
-	}
+	const getCity = useCallback(
+		async function getCity(id) {
+			// console.log(id, currentCity.id)
+			if (+id === currentCity.id) return //AVOIDING REDUNDANT RENDERING OF THE COMPONENTS IF ID CLICKED IS SAME AS THE CURRENTLY SHOWN - BEWARE ID IS KEPT STRING AND NEEDS TO BE CONVERTED TO NUMBER BEFORE CHECKING FOR EQUALITY.
+			try {
+				// setIsLoading(true)
+				dispatch({ type: 'loading' })
+				const res = await fetch(`${BASE_URL}/cities/${id}`)
+				const data = await res.json()
+				// setCurrentCity(data)
+				dispatch({ type: 'city/loaded', payload: data })
+			} catch {
+				// alert('There was an error loading data...')
+				dispatch({
+					type: 'rejected',
+					payload: 'There was an error loading the city...',
+				})
+			}
+			// finally {
+			// 	setIsLoading(false)
+			// }
+		},
+		[currentCity.id],
+	)
 
 	async function createCity(newCity) {
 		try {
