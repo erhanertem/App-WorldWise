@@ -7,7 +7,7 @@
 ### **Objective:** Cretae WorldWise App
 
 - React Routing
--
+- Code splitting for bundled file optimization
 
 &emsp;
 
