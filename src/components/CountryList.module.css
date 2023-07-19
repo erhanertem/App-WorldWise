@@ -14,3 +14,9 @@
 .countryList::-webkit-scrollbar {
 	width: 0;
 }
+/* Alternately 
+.countryList::-webkit-scrollbar {
+ display: none;
+ scroll-behavior: smooth;
+} 
+*/

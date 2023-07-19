@@ -14,6 +14,12 @@
 .city::-webkit-scrollbar {
 	width: 0;
 }
+/* Alternately 
+.city::-webkit-scrollbar {
+ display: none;
+ scroll-behavior: smooth;
+} 
+*/
 
 .row {
 	display: flex;
