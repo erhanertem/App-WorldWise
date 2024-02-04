@@ -1,59 +1,28 @@
-import styles from './CityItem.module.css'
-import { Link } from 'react-router-dom'
-import flagEmojiToPNG from './flagEmojiToPNG'
-import { useCities } from '../contexts/CitiesContext'
+/* eslint-disable react/prop-types */
+import { Link } from 'react-router-dom';
+import styles from './CityItem.module.css';
 
-const formatDate = date =>
+const formatDate = (date) =>
 	new Intl.DateTimeFormat('en', {
 		day: 'numeric',
 		month: 'long',
 		year: 'numeric',
-	}).format(new Date(date))
-
-// const flagEmojiToPNG = flag => {
-// 	const countryCode = Array.from(flag, codeUnit => codeUnit.codePointAt())
-// 		.map(char => String.fromCharCode(char - 127397).toLowerCase())
-// 		.join('')
-// 	// console.log('⛔', countryCode)
-// 	// G = ASCII 71 + 127397 = UNICODE 127468 (0x1F1EC) = 🇬
-// 	// B = ASCII 66 + 127397 = UNICODE 127463 (0x1F1E7) = 🇧
-
-// 	return (
-// 		<img
-// 			src={`https://flagcdn.com/24x18/${countryCode}.png`}
-// 			alt="country flag"
-// 		/>
-// 	)
-// }
+	}).format(new Date(date));
 
 function CityItem({ city }) {
-	const { currentCity, deleteCity } = useCities()
-	const { cityName, emoji, date, id, position } = city
-
-	function handleClick(event) {
-		event.preventDefault() // IMPORTANT! THIS PREVENTS ALSO CLICKING ONTO THE LINK WHILE CLICKING ONTO X BUTTON.
-		deleteCity(id)
-	}
+	// console.log(city);
+	const { cityName, emoji, date, id, position } = city;
 
 	return (
 		<li>
-			<Link
-				className={`${styles.cityItem} ${
-					id === currentCity.id ? styles['cityItem--active'] : ''
-				}`}
-				to={`${id}?lat=${position.lat}&lng=${position.lng}`}
-			>
-				<span className={styles.emoji}>
-					{emoji ? flagEmojiToPNG(emoji) : ''}
-				</span>
+			<Link className={styles.cityItem} to={`${id}?lat=${position.lat}&lng=${position.lng}`}>
+				<span className={styles.emoji}>{emoji}</span>
 				<h3 className={styles.name}>{cityName}</h3>
-				<time className={styles.date}>({formatDate(date)})</time>
-				<button className={styles.deleteBtn} onClick={handleClick}>
-					&times;
-				</button>
+				<time className={styles.date}>{formatDate(date)}</time>
+				<button className={styles.deleteBtn}>&times;</button>
 			</Link>
 		</li>
-	)
+	);
 }
 
-export default CityItem
+export default CityItem;

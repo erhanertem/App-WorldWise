@@ -1,15 +1,16 @@
-import styles from './Sidebar.module.css'
-import Logo from './Logo'
-import AppNav from './AppNav'
-import { Outlet } from 'react-router-dom'
+import Logo from './Logo';
+import AppNav from './AppNav';
+import styles from './Sidebar.module.css';
+import { Outlet } from 'react-router-dom';
 
-function Sidebar() {
+function SideBar() {
 	return (
 		<div className={styles.sidebar}>
 			<Logo />
 			<AppNav />
 
-			{/* React Router Outlet element that displays the child routes @ the /app route */}
+			{/* <p>LIST OF CITIES</p> */}
+			{/* Outlet acts like a children object inside app Route element. Depending on the nested route, Outlet provides the corresponding UI content. As such Outlet could be cities, countries or form depending on the sub route input @ URL */}
 			<Outlet />
 
 			<footer className={styles.footer}>
@@ -18,7 +19,7 @@ function Sidebar() {
 				</p>
 			</footer>
 		</div>
-	)
+	);
 }
 
-export default Sidebar
+export default SideBar;
