@@ -22,13 +22,14 @@
 <details>
 <summary>Installed NPM packages and utilized APIs:</summary>
 
-| Package command             | Package link                  | Description |
-| --------------------------- | ----------------------------- | ----------- |
-| npm create vite@latest      |                               |             |
-| npm i react-router-dom      |                               |             |
-| npm i json-server           |                               |             |
-| npm i react-datepicker      |                               |             |
-| npm i react-leaflet leaflet | https://react-leaflet.js.org/ |             |
+| Package command                   | Package link                  | Description |
+| --------------------------------- | ----------------------------- | ----------- |
+| npm create vite@latest            |                               |             |
+| npm i react-router-dom            |                               |             |
+| npm i json-server                 |                               |             |
+| npm i react-datepicker            |                               |             |
+| npm i react-leaflet leaflet       | https://react-leaflet.js.org/ |             |
+| npm i country-flag-emoji-polyfill |                               |             |
 
 </details>
 
