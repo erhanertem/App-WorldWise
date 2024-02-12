@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable react-refresh/only-export-components */
 /* eslint-disable react/prop-types */
-import { createContext, useContext, useEffect, useReducer, useState } from 'react';
+import { createContext, useCallback, useContext, useEffect, useReducer, useState } from 'react';
 
 const BASE_URL = 'http://localhost:8000';
 
@@ -70,27 +70,32 @@ function CitiesProvider({ children }) {
 		fetchCities();
 	}, []);
 
-	async function getCity(id) {
-		//GUARD CLAUSE
-		// IF SAME ITEM CLICKED REPEATEDLY API IS NOT CALLED AGAIN
-		// console.log(id, currentCity.id);
-		if (id === currentCity.id) return;
+	// NOTE: USECALLBACK TO TELL USEEFFECT @ CITY.JSX TO MEMOIZE THIS FUNCTION AND TREAT AS NOT DIFFERENT EACH TIME CALLED TO BREAK INFINITE CALL LOOP
+	const getCity = useCallback(
+		async function getCity(id) {
+			//GUARD CLAUSE
+			// IF SAME ITEM CLICKED REPEATEDLY API IS NOT CALLED AGAIN
+			// console.log(id, currentCity.id);
+			if (id === currentCity.id) return;
 
-		dispatch({ type: 'loading' });
-		try {
-			// setIsLoading(true);
-			const res = await fetch(`${BASE_URL}/cities/${id}`);
-			const data = await res.json();
-			dispatch({ type: 'city/loaded', payload: data });
-			// setCurrentCity(data);
-		} catch {
-			// alert('There was an error loading data...');
-			dispatch({ type: 'rejected', payload: 'There was an error loading city...' });
-		}
-		// finally {
-		// 	setIsLoading(false);
-		// }
-	}
+			dispatch({ type: 'loading' });
+			try {
+				// setIsLoading(true);
+				const res = await fetch(`${BASE_URL}/cities/${id}`);
+				const data = await res.json();
+				dispatch({ type: 'city/loaded', payload: data });
+				// setCurrentCity(data);
+			} catch {
+				// alert('There was an error loading data...');
+				dispatch({ type: 'rejected', payload: 'There was an error loading city...' });
+			}
+			// finally {
+			// 	setIsLoading(false);
+			// }
+		},
+		[currentCity],
+	);
+
 	async function createCity(newCity) {
 		dispatch({ type: 'loading' });
 		try {
