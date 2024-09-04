@@ -1,0 +1,1 @@
+These are the SPAs template components(pages) used in react-routing.

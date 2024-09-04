@@ -6,7 +6,7 @@
 
 ### **Objective:** Create WorldWise App
 
-- SPAs & React Routing
+- SPAs & React Routing via react-router-dom package
 - Code splitting for bundled file optimization
 
 &emsp;
