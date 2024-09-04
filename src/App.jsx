@@ -13,7 +13,8 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route
-          path="/"
+          // path="/"
+          index
           element={<Homepage />}
         />
         <Route
@@ -31,7 +32,25 @@ function App() {
         <Route
           path="app"
           element={<AppLayout />}
-        />
+        >
+          {/* 3 nested routes */}
+          <Route
+            index
+            element={<p>LIST</p>}
+          />
+          <Route
+            path="cities"
+            element={<p>List of Cities</p>}
+          />
+          <Route
+            path="countries"
+            element={<p>Countries</p>}
+          />
+          <Route
+            path="form"
+            element={<p>Form</p>}
+          />
+        </Route>
         <Route
           // All other routes yields pagenotfound
           path="*"
