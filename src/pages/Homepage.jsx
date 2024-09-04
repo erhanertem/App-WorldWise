@@ -8,7 +8,7 @@ function Homepage() {
     <div>
       <PageNav />
       <AppNav />
-      <h1>WorldWise</h1>
+      <h1 className="test">WorldWise</h1>
       {/* NOTE: Using a tag element causes hard reload  when routing */}
       {/* <a href="/pricing">Pricing</a> */}
       <Link to="/app">Go to the app</Link>
