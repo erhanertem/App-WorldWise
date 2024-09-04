@@ -8,10 +8,10 @@
   list-style: none;
 }
 
-:global(.test) {
-  background-color: orange;
-}
-
 .nav :global(.active) {
   background-color: green;
+}
+
+:global(.test) {
+  background-color: orange;
 }
