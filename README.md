@@ -7,7 +7,16 @@
 ### **Objective:** Create WorldWise App
 
 - SPAs & React Routing via react-router-dom package
-- CSS-modules
+  - Creating, nesting, index(default) routes
+  - Declarative Navigation
+    - Link, NavLink RRC components
+  - Programmatic Navigation
+    - Declarative Programmatic Navigation
+      - Navigate RRC component
+    - Imperative Programmatic Navigation
+      - useNavigate() RRC hook
+- CSS handling in this app
+  - CSS-modules
 - Code splitting for bundled file optimization
 
 &emsp;
