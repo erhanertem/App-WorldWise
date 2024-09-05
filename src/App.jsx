@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './index.css';
+import { polyfillCountryFlagEmojis } from 'country-flag-emoji-polyfill';
+polyfillCountryFlagEmojis();
 
 import Product from './pages/Product';
 import Pricing from './pages/Pricing';
