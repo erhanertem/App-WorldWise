@@ -12,6 +12,7 @@ import AppLayout from './pages/AppLayout';
 import Login from './pages/Login';
 import CityList from './components/CityList';
 import CountryList from './components/CountryList';
+import City from './components/City';
 
 const BASE_URL = 'http://localhost:8000';
 function App() {
@@ -68,6 +69,7 @@ function App() {
               />
             }
           />
+          {/* Nested route @ app/cities */}
           <Route
             path="cities"
             element={
@@ -77,6 +79,12 @@ function App() {
               />
             }
           />
+          {/* Dynamic Nested param route @ app/cities/{id} */}
+          <Route
+            path="cities/:id"
+            element={<City />}
+          />
+          {/* Nested route @ app/countries */}
           <Route
             path="countries"
             element={
@@ -86,6 +94,7 @@ function App() {
               />
             }
           />
+          {/* Nested route @ app/form */}
           <Route
             path="form"
             element={<p>Form</p>}
