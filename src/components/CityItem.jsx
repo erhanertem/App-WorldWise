@@ -1,9 +1,11 @@
 /* eslint-disable react/prop-types */
 import { Link } from 'react-router-dom';
 import styles from './CityItem.module.css';
+import { useCities } from '../contexts/CitiesContext';
 
 function CityItem({ city }) {
-  console.log(city);
+  // READ FROM CONTEXT API
+  const { currentCity } = useCities();
   const {
     cityName,
     emoji,
@@ -23,7 +25,7 @@ function CityItem({ city }) {
     // Wrap by Link RRC to provide hyperlink to Dynamic Nested param route @ app/cities/{id} - beause when we click this list item, it should kick in City.jsx via cities/:id Route @ App.jsx
     <li>
       <Link
-        className={styles.cityItem}
+        className={`${styles.cityItem} ${id === currentCity.id ? styles['cityItem--active'] : ''}`}
         to={`${id}?lat=${lat}&lng=${lng}`}
       >
         <span className={styles.emoji}>{emoji}</span>
