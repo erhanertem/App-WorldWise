@@ -5,15 +5,18 @@ import { createContext, useContext, useEffect, useReducer } from 'react';
 
 const BASE_URL = 'http://localhost:8000';
 
-// Create a Context
+// INSTANTIATE A CONTEXT API
 const CitiesContext = createContext();
 
+// REDUCER SETUP FOR THIS CONTEXT API
+// USEREDUCER INITIALSTATE
 const initialState = {
   cities: [],
   isLoading: false,
   currentCity: {},
   error: '',
 };
+// USEREDUCER REDUCER FUNCTION
 function reducer(currState, action) {
   switch (action.type) {
     case 'loading':
@@ -58,8 +61,9 @@ function reducer(currState, action) {
   }
 }
 
-// Create a Custom Context Provider with pertinent state/eventhandlers in order to wrap child components and serve them
+// CREATE A CUSTOM CONTEXT PROVIDER TO WRAP AROUND CHILD COMPONENTS AND SERVE PERTINENT STATE/EVENTHANDLERS
 function CitiesProvider({ children }) {
+  // CONSUME USEREDUCER
   const [currState, dispatch] = useReducer(reducer, initialState);
   const { cities, isLoading, currentCity, error } = currState;
 

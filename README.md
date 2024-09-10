@@ -21,7 +21,7 @@
 
 &emsp;
 
-#### [WorldWise App](https://app-worldwise-erhan-ertem.netlify.app/)
+#### <img src="./push.gif" width="20px"/> [WorldWise App](https://app-worldwise-erhan-ertem.netlify.app/)
 
 <img src="./screenshot.webp" width="500px"/>
 
