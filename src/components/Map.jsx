@@ -11,7 +11,7 @@ function Map() {
   const { cities } = useCities();
   // THIS STATE IS CREATED SO THAT THE LAST POSITION IS KEPT ON THE MAP EVENTHOUGH WE PRESS BACK BUTTON ON THE CITY DETAILS.
   const [mapPosition, setMapPosition] = useState([40, 0]);
-  // Read uRL for lat lng coordinates when clicked on one of the cities in the cities tab
+  // Read URL for lat lng coordinates when clicked on one of the cities in the cities tab
   const [searchParams] = useSearchParams();
   const mapLat = searchParams.get('lat');
   const mapLng = searchParams.get('lng');
@@ -26,6 +26,7 @@ function Map() {
   return (
     <div className={styles.mapContainer}>
       <MapContainer
+        // CENTER TO EITHER CLICKED COORDINATES OR USE DEFAULT MAP POS IF NOTHING IS CLICKED
         center={[mapLat || mapPosition[0], mapLng || mapPosition[1]]}
         zoom={6}
         scrollWheelZoom={true}
@@ -56,8 +57,8 @@ function Map() {
 
 // CREATE A CUSTOM REACT HOOK FOR THE REACT-LEAFLET LIBRARY TO DYNAMICALLY CHANGE MAPCONTAINER 'center' PROP
 function ChangeCenter({ position }) {
-  const map = useMap();
-  map.setView(position);
+  const map = useMap(); //Get a hold of the map instance
+  map.setView(position); // Change centering coords based on the position state
   return null; //Every JSX should return either null or something...
 }
 // CREATE A CUSTOM REACT HOOK FOR THE REACT-LEAFLET LIBRARY TO LISTEN FOR CLICK EVENTS
@@ -65,8 +66,8 @@ function DetectClickEvent() {
   const navigate = useNavigate();
   useMapEvents({
     click: (e) => {
-      console.log(e);
-      navigate(`form?lat=${e.latlng.lat}&lng=${e.latlng.lng}`);
+      // console.log(e);
+      navigate(`form?lat=${e.latlng.lat}&lng=${e.latlng.lng}`); //Change url state everytime clicked on the map
     },
   });
 }
