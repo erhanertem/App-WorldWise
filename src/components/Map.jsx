@@ -5,6 +5,7 @@ import styles from './Map.module.css';
 
 import { useCities } from '../contexts/citiesContext';
 import { useGeolocation } from '../hooks/useGeolocation';
+import { useUrlPosition } from '../hooks/useUrlPosition';
 import Button from './Button';
 
 import { MapContainer, Marker, Popup, TileLayer, useMap, useMapEvents } from 'react-leaflet';
@@ -13,10 +14,7 @@ function Map() {
   const { cities } = useCities();
   const [mapPosition, setMapPosition] = useState([40, 0]); // THIS STATE IS CREATED SO THAT THE LAST POSITION IS KEPT ON THE MAP EVENTHOUGH WE PRESS BACK BUTTON ON THE CITY DETAILS.
   const { isLoading: isLoadingPosition, position: geolocationPosition, getPosition } = useGeolocation();
-  const [searchParams] = useSearchParams(); // Read URL for lat lng coordinates when clicked on one of the cities in the cities tab
-  const mapLat = searchParams.get('lat');
-  const mapLng = searchParams.get('lng');
-
+  const [mapLat, mapLng] = useUrlPosition();
   // SYNC PARAMS LAT/LNG DATA WITH MAPPOSITION DATA SO THE POPUP IS CENTERED CORRECTLY
   useEffect(
     function () {
