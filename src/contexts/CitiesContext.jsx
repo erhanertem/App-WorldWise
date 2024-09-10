@@ -55,7 +55,21 @@ function CitiesProvider({ children }) {
       // SYNC UI STATE WITH THE DB(REMOTE STATE)
       setCities((cities) => [...cities, data]);
     } catch {
-      alert('There was an error loading data...');
+      alert('There was an error creating data...');
+    } finally {
+      setIsLoading(false);
+    }
+  }
+
+  async function deleteCity(id) {
+    try {
+      setIsLoading(true);
+      // REMOVE THE ITEM FROM THE DB(REMOTE STATE)
+      await fetch(`${BASE_URL}/cities/${id}`, { method: 'DELETE' });
+      // SYNC UI STATE WITH THE DB(REMOTE STATE)
+      setCities((cities) => cities.filter((city) => city.id !== id));
+    } catch {
+      alert('There was an error deleting data...');
     } finally {
       setIsLoading(false);
     }
@@ -68,6 +82,7 @@ function CitiesProvider({ children }) {
         isLoading,
         getCity,
         createCity,
+        deleteCity,
         currentCity,
       }}
     >
