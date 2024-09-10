@@ -4,17 +4,19 @@ import { useNavigate, useSearchParams } from 'react-router-dom';
 import styles from './Map.module.css';
 
 import { useCities } from '../contexts/citiesContext';
+import { useGeolocation } from '../hooks/useGeolocation';
+import Button from './Button';
 
 import { MapContainer, Marker, Popup, TileLayer, useMap, useMapEvents } from 'react-leaflet';
 
 function Map() {
   const { cities } = useCities();
-  // THIS STATE IS CREATED SO THAT THE LAST POSITION IS KEPT ON THE MAP EVENTHOUGH WE PRESS BACK BUTTON ON THE CITY DETAILS.
-  const [mapPosition, setMapPosition] = useState([40, 0]);
-  // Read URL for lat lng coordinates when clicked on one of the cities in the cities tab
-  const [searchParams] = useSearchParams();
+  const [mapPosition, setMapPosition] = useState([40, 0]); // THIS STATE IS CREATED SO THAT THE LAST POSITION IS KEPT ON THE MAP EVENTHOUGH WE PRESS BACK BUTTON ON THE CITY DETAILS.
+  const { isLoading: isLoadingPosition, position: geolocationPosition, getPosition } = useGeolocation();
+  const [searchParams] = useSearchParams(); // Read URL for lat lng coordinates when clicked on one of the cities in the cities tab
   const mapLat = searchParams.get('lat');
   const mapLng = searchParams.get('lng');
+
   // SYNC PARAMS LAT/LNG DATA WITH MAPPOSITION DATA SO THE POPUP IS CENTERED CORRECTLY
   useEffect(
     function () {
@@ -22,13 +24,27 @@ function Map() {
     },
     [mapLat, mapLng]
   );
-
+  // SYNC GEOLOCATION COORDINATES WITH MAPPOSITION DATA SO THE POPUP IS CENTERED
+  useEffect(
+    function () {
+      if (geolocationPosition) setMapPosition([geolocationPosition.lat, geolocationPosition.lng]);
+    },
+    [geolocationPosition]
+  );
   return (
     <div className={styles.mapContainer}>
+      {!geolocationPosition && (
+        <Button
+          type="position"
+          onClick={getPosition}
+        >
+          {isLoadingPosition ? 'Loading...' : 'Use your position'}
+        </Button>
+      )}
       <MapContainer
         // CENTER TO EITHER CLICKED COORDINATES OR USE DEFAULT MAP POS IF NOTHING IS CLICKED
         center={[mapLat || mapPosition[0], mapLng || mapPosition[1]]}
-        zoom={6}
+        zoom={10}
         scrollWheelZoom={true}
         className={styles.map}
       >
