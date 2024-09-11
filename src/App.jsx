@@ -15,6 +15,7 @@ import City from './components/City';
 import Form from './components/Form';
 import { AuthProvider } from './contexts/AuthContext';
 import { CitiesProvider } from './contexts/CitiesContext';
+import ProtectedRoute from './pages/ProtectedRoute';
 
 function App() {
   return (
@@ -41,7 +42,11 @@ function App() {
             />
             <Route
               path="app"
-              element={<AppLayout />}
+              element={
+                <ProtectedRoute>
+                  <AppLayout />
+                </ProtectedRoute>
+              }
             >
               {/* 3 nested routes */}
               {/* Default loaded route */}
