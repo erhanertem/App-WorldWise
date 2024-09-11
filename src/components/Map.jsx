@@ -1,12 +1,14 @@
 /* eslint-disable react/prop-types */
-import { useEffect, useState } from 'react';
-import { useNavigate, useSearchParams } from 'react-router-dom';
 import styles from './Map.module.css';
+import { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
-import { useCities } from '../contexts/citiesContext';
+import Button from './Button';
+
+import { useCities } from '../contexts/CitiesContext';
+
 import { useGeolocation } from '../hooks/useGeolocation';
 import { useUrlPosition } from '../hooks/useUrlPosition';
-import Button from './Button';
 
 import { MapContainer, Marker, Popup, TileLayer, useMap, useMapEvents } from 'react-leaflet';
 
