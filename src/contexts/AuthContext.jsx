@@ -11,8 +11,8 @@ const initialState = {
   user: null,
   isAuthenticated: false,
 };
-// REDUCER FUNCTION SETUP
 
+// REDUCER FUNCTION SETUP
 function reducer(state, action) {
   switch (action.type) {
     case 'login':
@@ -46,12 +46,13 @@ function AuthProvider({ children }) {
       dispatch({ type: 'login', payload: FAKE_USER });
     }
   }
+
   function logout() {
     dispatch({ type: 'logout' });
   }
 
   // WRAPPER JSX FORM
-  return <AuthProvider value={(user, isAuthenticated, login, logout)}>{children}</AuthProvider>;
+  return <AuthContext.Provider value={(user, isAuthenticated, login, logout)}>{children}</AuthContext.Provider>;
 }
 
 function useAuth() {

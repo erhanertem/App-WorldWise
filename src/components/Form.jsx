@@ -4,8 +4,8 @@ import 'react-datepicker/dist/react-datepicker.css';
 
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useCities } from '../contexts/CitiesContext';
 import { useUrlPosition } from '../hooks/useUrlPosition';
+import { useCities } from '../contexts/CitiesContext';
 
 import styles from './Form.module.css';
 import Button from './Button';
