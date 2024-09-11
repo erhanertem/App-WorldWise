@@ -14,7 +14,7 @@ import CountryList from './components/CountryList';
 import City from './components/City';
 import Form from './components/Form';
 import { AuthProvider } from './contexts/AuthContext';
-import { CitiesProvider } from './contexts/citiesContext';
+import { CitiesProvider } from './contexts/CitiesContext';
 
 function App() {
   return (
