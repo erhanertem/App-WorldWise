@@ -13,8 +13,8 @@ function ProtectedRoute({ children }) {
     [isAuthenticated, navigate]
   );
 
-  // PASS THRU ENTIRE WRAPPED JSX
-  return children;
+  // PASS THRU ENTIRE WRAPPED JSX IF AUTHENTICATED
+  return isAuthenticated ? children : null;
 }
 
 export default ProtectedRoute;
