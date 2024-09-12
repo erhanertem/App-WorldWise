@@ -2,35 +2,37 @@
 
 &emsp;
 
-## Udemy The Ultimate React Course 2023: React, Redux & More by Jonas Schmedtmann
+## Udemy The Ultimate React Course 2024: React, Redux & More by Jonas Schmedtmann
 
-### **Objective:** Cretae WorldWise App
+### **Objective:** Create WorldWise App
 
-- React Routing
+- SPAs & React Routing via react-router-dom package
+  - Creating, nesting, index(default) routes
+  - Declarative Navigation
+    - Link, NavLink RRC components
+  - Programmatic Navigation
+    - Declarative Programmatic Navigation
+      - Navigate RRC component
+    - Imperative Programmatic Navigation
+      - useNavigate() RRC hook
+  - Low level login/logout functionality
+    - Protected route implementation
+  - useEffect and inside-function memoization via useCallback hook
+- CSS handling in this app
+  - CSS-modules
 - Code splitting for bundled file optimization
+  - Route lazy loading via lazy hook
+  - Provide fallback loader component via <Suspense > wrapper component @ routes
 
 &emsp;
 
-#### Link to Project &rarr; [WorldWise App](https://app-worldwise-erhan-ertem.netlify.app/)
+#### <img src="./push.gif" width="30px"/>[WorldWise App](https://app-worldwise-erhan-ertem.netlify.app/)
 
-![Screenshot](screenshot.webp)
+<img src="./screenshot.webp" width="500px"/>
 
 ---
 
-![JS](https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E) ![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB) ![React Router](https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white) ![Vite](https://img.shields.io/badge/Vite-B73BFE?style=for-the-badge&logo=vite&logoColor=FFD62E)
-
-<details>
-<summary>Installed NPM packages and utilized APIs:</summary>
-
-| Package command                   | Package link                  | Description |
-| --------------------------------- | ----------------------------- | ----------- |
-| npm create vite@latest            |                               |             |
-| npm i react-router-dom            |                               |             |
-| npm i json-server                 |                               |             |
-| npm i react-datepicker            |                               |             |
-| npm i react-leaflet leaflet       | https://react-leaflet.js.org/ |             |
-| npm i country-flag-emoji-polyfill |                               |             |
-
-</details>
-
-&emsp;
+![JS](https://img.shields.io/badge/JavaScript-323330?style=square&logo=javascript&logoColor=F7DF1E)
+![React](https://img.shields.io/badge/React-20232A?style=square&logo=react&logoColor=61DAF)
+![React Router](https://img.shields.io/badge/React_Router-CA4245?style=square&logo=react-router&logoColor=white)
+![Vite](https://img.shields.io/badge/Vite-B73BFE?style=square&logo=vite&logoColor=FFD62E)

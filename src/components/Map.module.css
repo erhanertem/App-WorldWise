@@ -18,6 +18,7 @@
 }
 
 :global(.leaflet-popup .leaflet-popup-content) {
+  font-family: 'Twemoji Country Flags';
   font-size: 1.5rem;
   display: flex;
   align-items: center;

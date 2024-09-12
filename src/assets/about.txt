@@ -1,0 +1,1 @@
+Assets folder includes external images, etc that is directly imported into jsx code
