@@ -4,10 +4,12 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
+    "dev_start": "concurrently \"npm run dev\" \"npm run server\"",
     "dev": "vite",
     "server": "json-server --watch data/cities.json --port 8000 delay 500",
-    "start_dev": "concurrently \"npm run dev\" \"npm run server\"",
+    "prod_build": "npm install && npm run build",
     "build": "vite build",
+    "prod_serve": "concurrently \"node ./src/server.js\" \"npx serve -s dist\"",
     "lint": "eslint .",
     "preview": "vite preview"
   },
@@ -20,7 +22,8 @@
     "react-datepicker": "^7.3.0",
     "react-dom": "^18.3.1",
     "react-leaflet": "^4.2.1",
-    "react-router-dom": "^6.26.1"
+    "react-router-dom": "^6.26.1",
+    "serve": "^14.2.3"
   },
   "devDependencies": {
     "@eslint/js": "^9.9.0",

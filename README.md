@@ -22,11 +22,17 @@
   - CSS-modules
 - Code splitting for bundled file optimization
   - Route lazy loading via lazy hook
-  - Provide fallback loader component via <Suspense > wrapper component @ routes
+  - Provide fallback loader component via Suspense wrapper component @ routes
+
+Aside from cirriculum:
+
+- Establish a backend to host json-server with CORs and ESM syntax
+- Add conditional Login/Logoff Button @ landing page based on isAuthenticated state when in Protected Route and used
+  Browser back navigation button
 
 &emsp;
 
-#### <img src="./push.gif" width="30px"/>[WorldWise App](https://app-worldwise-erhan-ertem.netlify.app/)
+#### <img src="./push.gif" width="30px"/>[WorldWise App](https://app-worldwise-erhan-ertem.onrender.com/)
 
 <img src="./screenshot.webp" width="500px"/>
 
