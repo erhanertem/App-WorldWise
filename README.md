@@ -15,6 +15,8 @@
       - Navigate RRC component
     - Imperative Programmatic Navigation
       - useNavigate() RRC hook
+  - Low level login/logout functionality
+    - Protected route implementation
 - CSS handling in this app
   - CSS-modules
 - Code splitting for bundled file optimization
