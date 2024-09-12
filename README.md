@@ -17,9 +17,12 @@
       - useNavigate() RRC hook
   - Low level login/logout functionality
     - Protected route implementation
+  - useEffect and inside-function memoization via useCallback hook
 - CSS handling in this app
   - CSS-modules
 - Code splitting for bundled file optimization
+  - Route lazy loading via lazy hook
+  - Provide fallback loader component via <Suspense > wrapper component @ routes
 
 &emsp;
 
