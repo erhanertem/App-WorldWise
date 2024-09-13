@@ -32,9 +32,11 @@ Aside from cirriculum:
 
 &emsp;
 
+###### ⚠️Free-tier render services may experience throttling, leading to delayed app loading times.
+
 #### <img src="./push.gif" width="30px"/>[WorldWise App](https://app-worldwise-erhan-ertem.onrender.com/)
 
-<img src="./screenshot.webp" width="500px"/>
+<img src="./screenshot.webp" width="600px"/>
 
 ---
 
