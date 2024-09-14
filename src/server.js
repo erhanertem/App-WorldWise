@@ -3,7 +3,7 @@ import jsonServer from 'json-server';
 
 const server = jsonServer.create();
 
-const router = jsonServer.router(path.resolve('@data/cities.json')); // Your database file
+const router = jsonServer.router(path.resolve('data/cities.json')); // Your database file
 const middlewares = jsonServer.defaults();
 
 // Add custom middleware for CORS
