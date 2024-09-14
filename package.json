@@ -9,7 +9,7 @@
     "server": "json-server --watch data/cities.json --port 8000 delay 500",
     "prod_build": "npm install && npm run build",
     "build": "vite build",
-    "prod_serve": "concurrently \"node server.js\" \"npx serve -s dist\"",
+    "prod_serve": "concurrently \"node src/server.js\" \"npx serve -s dist\"",
     "lint": "eslint .",
     "preview": "vite preview"
   },
