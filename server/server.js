@@ -1,18 +1,9 @@
-import path from 'path';
-import jsonServer from 'json-server';
-import { fileURLToPath } from 'url';
+const path = require('path');
+const jsonServer = require('json-server');
 
 const server = jsonServer.create();
 
-// Get the directory name of the current module
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-
-console.log('✅', path.resolve(__dirname, 'data/cities.json'));
-// Resolve the path to the data/cities.json file at the root
-const router = jsonServer.router(path.resolve(__dirname, 'data/cities.json')); // Use path.resolve()
-
-// const router = jsonServer.router(path.resolve('data/cities.json')); // Your database file
+const router = jsonServer.router(path.resolve('data/cities.json')); // Your database file
 const middlewares = jsonServer.defaults();
 
 // Add custom middleware for CORS
@@ -37,5 +28,5 @@ server.use(middlewares);
 server.use(router);
 
 server.listen(8000, () => {
-  console.log('JSON Server is running');
+  console.log(`JSON Server is running on port 8000`);
 });

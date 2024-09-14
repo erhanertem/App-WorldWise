@@ -1,7 +1,6 @@
 {
   "name": "server",
   "version": "1.0.0",
-  "type": "module",
   "main": "server.js",
   "scripts": {
     "dev": "json-server --watch data/cities.json --port 8000 delay 500",
