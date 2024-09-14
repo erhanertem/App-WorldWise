@@ -3,7 +3,7 @@
 
 import { createContext, useCallback, useContext, useEffect, useReducer } from 'react';
 
-import BASE_URL from '../hooks/urls';
+const BASE_URL = 'http://localhost:8000';
 
 // INSTANTIATE A CONTEXT API
 const CitiesContext = createContext();
