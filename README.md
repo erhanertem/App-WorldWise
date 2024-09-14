@@ -24,15 +24,15 @@
   - Route lazy loading via lazy hook
   - Provide fallback loader component via Suspense wrapper component @ routes
 
-Aside from cirriculum:
+Aside from curriculum:
 
-- Establish a backend to host json-server with CORs and ESM syntax
+- Establish a backend to host json-server with CORs
 - Add conditional Login/Logoff Button @ landing page based on isAuthenticated state when in Protected Route and used
   Browser back navigation button
 
 &emsp;
 
-###### ⚠️Free-tier render services may experience throttling, leading to delayed app loading times.
+###### ⚠️Free-tier render services may experience throttling, leading to delayed app loading times. Since the API and client are hosted separately, getting the backend online may take additional time to respond due to enforced spin-downs on free-tier services.
 
 #### <img src="./push.gif" width="30px"/>[WorldWise App](https://app-worldwise-erhan-ertem.onrender.com/)
 
