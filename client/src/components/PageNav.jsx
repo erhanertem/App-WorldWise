@@ -1,7 +1,7 @@
 import { NavLink, useNavigate } from 'react-router-dom';
 import styles from './PageNav.module.css';
 
-import Logo from '../components/Logo';
+import Logo from './Logo';
 
 import { useAuth } from '../contexts/AuthContext';
 import Button from './Button';
